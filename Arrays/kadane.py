@@ -8,6 +8,17 @@ def max_subarray(arr):
     return maxnum
 print(max_subarray([-2, -3, 4, -1, -2, 1, 5, -3]))
 
+# kadane algorithm
+def kadane(arr):
+    sum=0
+    maxi=float('-inf')
+    for i in range(len(arr)):
+        sum+=arr[i]
+        maxi=max(maxi,sum)
+        if sum<0:
+            sum=0
+    return maxi
+print(max_subarray([-2, -3, 4, -1, -2, 1, 5, -3]))
 
 
 
