@@ -43,3 +43,23 @@ class Solution:
 a=Solution()
 print(a.isAnagram("anagram","nagaram"))
 print(a.isAnagram("rat","car"))
+# optimal solution
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        count1={}
+        for i in s:
+            count1[i]=count1.get(i,0)+1
+        for ch in t:
+            if ch not in count1:
+                return False
+            count1[ch]-=1
+            if count1[ch]==0:
+                del count1[ch]
+        return len(count1)==0
+a=Solution()
+print(a.isAnagram("anagram","nagaram"))
+print(a.isAnagram("rat","car"))
+    
