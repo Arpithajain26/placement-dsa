@@ -10,7 +10,16 @@
 
 # Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
- 
+
+def maxProfit(prices):
+    profit=0
+    mini=prices[0]
+    for i in range(len(prices)):
+        cost=prices[i]-mini
+        profit=max(profit,cost)
+        mini=min(mini,prices[i])
+    return profit
+print(maxProfit([7,1,5,3,6,4]))
 
 # Example 1:
 

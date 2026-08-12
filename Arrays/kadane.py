@@ -17,6 +17,8 @@ def kadane(arr):
         maxi=max(maxi,sum)
         if sum<0:
             sum=0
+    if maxi<0:
+        return 0
     return maxi
 print(max_subarray([-2, -3, 4, -1, -2, 1, 5, -3]))
 
