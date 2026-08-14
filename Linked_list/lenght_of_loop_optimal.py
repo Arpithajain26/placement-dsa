@@ -8,16 +8,18 @@ class ListNode:
 
 class Solution:
     def cycleLength(self, head: Optional[ListNode]) -> int:
-        mpp={}
-        temp=head
-        timer=1
-        while temp:
-            if temp in mpp:
-                value=mpp[temp]
-                return timer-value
-            mpp[temp]=1
-            timer+=1
-            temp=temp.next
+        slow=head
+        fast=head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                counter=1
+                fast=slow.next
+                while slow!=fast:
+                    fast=fast.next 
+                    counter+=1
+                return counter
         return 0
 head = ListNode(4)
 node = ListNode(5)
