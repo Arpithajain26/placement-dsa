@@ -1,4 +1,4 @@
-def majority_elem(nums):
+def majority_elm(nums):
     stack=[]
     ans=[-1]*len(nums)
     for i in range(len(nums)-1,-1,-1):
@@ -6,7 +6,6 @@ def majority_elem(nums):
             stack.pop()
         if stack:
             ans[i]=stack[-1]
-        else:
-            stack.append(nums[i])
+        stack.append(nums[i])
     return ans
-print(majority_elem([6,0,8,1,3]))
+print(majority_elm([6,0,8,1,3]))
